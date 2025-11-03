@@ -4,7 +4,8 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 var cache = builder.AddRedis("cache");
 
-var weatherapi = builder.AddProject<Projects.AspireWithNode_AspNetCoreApi>("weatherapi");
+var weatherapi = builder.AddProject<Projects.AspireWithNode_AspNetCoreApi>("weatherapi")
+.WithExternalHttpEndpoints();
 
 var frontend = builder.AddNpmApp("frontend", "../NodeFrontend", "watch")
     .WithReference(weatherapi)
