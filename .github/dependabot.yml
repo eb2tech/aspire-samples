@@ -102,6 +102,10 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 1
+    ignore:
+      - dependency-name: "typescript"
+        update-types:
+          - "version-update:semver-major"
     groups:
       vue-core:
         patterns:
@@ -127,6 +131,10 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 1
+    ignore:
+      - dependency-name: "typescript"
+        update-types:
+          - "version-update:semver-major"
     groups:
       vite-tooling:
         patterns:
@@ -136,18 +144,6 @@ updates:
           - "@types/*"
           - "eslint*"
       misc-deps:
-        patterns:
-          - "*"
-    labels:
-      - area-engineering-systems
-
-  - package-ecosystem: npm
-    directory: "samples/aspire-with-node/NodeFrontend"
-    schedule:
-      interval: weekly
-    open-pull-requests-limit: 1
-    groups:
-      all-dependencies:
         patterns:
           - "*"
     labels:
